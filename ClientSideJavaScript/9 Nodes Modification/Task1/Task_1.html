@@ -1,1 +1,49 @@
-<>
+<html>
+<head>
+
+</head>
+
+<body>
+
+    <div id='rollercoaster'/>
+
+
+    <script>
+        var text = 'Hello World!'.toLowerCase();
+        var rollercoaster = document.getElementById('rollercoaster');
+
+
+        function renderString(str){
+            var length = str.length;
+            var stringMiddle = Math.floor(str.length / 2);
+
+            var startFontSize = 10;
+            const DELTA = 10;
+
+
+            for(let i = 0; i < length; i++){
+               
+                var newSpan = document.createElement('SPAN');
+                newSpan.innerHTML = str[i];
+               
+                if( i >= stringMiddle){
+                    newSpan.style.color = "red";
+                    startFontSize -= DELTA * (i-stringMiddle);
+                }else{
+                    startFontSize += DELTA * i;
+                    
+                }
+                newSpan.style.fontSize = startFontSize;
+                rollercoaster.appendChild(newSpan);
+            }
+        }
+
+        renderString(text);
+
+    </script>
+
+
+</body>
+
+
+</html>
