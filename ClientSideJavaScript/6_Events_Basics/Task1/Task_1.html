@@ -1,1 +1,96 @@
-<>
+<html>
+
+<head>
+    <style>
+        div .menu-item{background-color: lightblue; padding: 1px 2px; margin: 2px; width: 200px; cursor: pointer}
+
+    </style>
+</head>
+
+<body>
+
+
+    <img src="linux.png" alt="tux" width="100" id="tux"/>
+    <div id='menu'>
+
+        <div id="option1" class="menu-item" action="color1">Photograph</div>
+        
+        <div id="option2" class="menu-item" action="color2">Rub belly</div>
+            
+        <div id="option3" class="menu-item" action="color3">Feed a fish</div>
+            
+    </div>
+
+    <script>
+
+        var tux = document.getElementById('tux');
+        var menu = document.getElementById('menu');
+
+        menu.style.visibility = "hidden";    
+        menu.addEventListener('click', onClickMenu);
+        document.addEventListener('click', onPageClick);
+
+        document.body.oncontextmenu = function click(){
+            event.preventDefault();
+            showMenu(event);
+        }
+
+        function onPageClick(event){
+            if(event.target.nodeName == "BODY"){ 
+                setMenuDefaultColor();
+                menu.style.visibility = "hidden";
+            }
+        }
+
+        function showMenu(event){
+            if(event.target instanceof  HTMLImageElement){
+                menu.style.visibility = "visible";
+                setMenuPos(event);
+            }else
+            {
+                setMenuDefaultColor();
+                menu.style.visibility = "hidden";
+            }
+        }
+        
+        function setMenuPos(e){
+            menu.style.position = "absolute";
+            menu.style.left = e.pageX;// + "123px";
+            menu.style.top = e.pageY;// + "123px";
+        }
+
+        function setMenuDefaultColor(){
+            var menuList = menu.getElementsByTagName('*');
+                for (var i = 0, n = menuList.length; i < n; i++){
+                    if (menuList[i].getAttribute('action') !== null)
+                    {
+                        menuList[i].style.color = "black";   
+                    }
+                }
+        }
+      
+        function onClickMenu(event){
+            var action = event.target.getAttribute("action");
+            switch(action){
+                case "color1":{
+                    event.target.style.color = "red";
+                    break;
+                }
+                case "color2":{
+                    event.target.style.color = "green";
+                    break;
+                }
+                case "color3":{
+                    event.target.style.color = "blue";
+                    break;
+                }
+                default:{
+                    break;
+                }
+
+            }
+        }
+       
+    </script>
+</body>
+</html>
