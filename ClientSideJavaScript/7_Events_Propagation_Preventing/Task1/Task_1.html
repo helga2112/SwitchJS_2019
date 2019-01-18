@@ -1,1 +1,52 @@
 
+<html>
+    <head>
+        <style>
+            td img{width: 50px ;}
+        </style>
+    </head>
+
+    <body>
+        <table id="star_table">
+                 <tr>
+                   <td><img src='star_off.png' ><td>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                 </td>
+                 <tr>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                 </td>
+                 <tr>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                 </td>
+                <tr>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                   <td><img src='star_off.png'><td>
+                 </td>
+        </table>
+
+        <script>
+            star_table.addEventListener('mouseover', onMouseOver );
+            star_table.addEventListener('mouseout', onMouseOut );
+
+            function onMouseOver(event){
+                if(event.target.tagName == 'IMG'){
+                    event.target.src ="start_on.png";
+                }
+            }
+
+            function onMouseOut(){
+                if(event.target.tagName == 'IMG'){
+                    event.target.src ="star_off.png";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
