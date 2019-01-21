@@ -1,1 +1,31 @@
 
+Origin:
+.favorite {
+   color: red;
+}
+.favorite {
+   color: black;
+}
+
+
+Variant 1
+.favorite {
+   color: red;
+}
+
+
+Variant 2
+.favorite {
+   color: black;
+}
+
+.favorite {
+   color: red;
+}
+Variant 3
+
+div .favorite {
+   color: red;
+}
+
+
