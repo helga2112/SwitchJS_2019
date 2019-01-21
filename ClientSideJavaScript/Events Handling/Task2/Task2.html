@@ -1,1 +1,38 @@
-<>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  background-color: red;
+  height: 100px;
+  width: 25%;
+  float: left;
+  margin: 3px;
+} 
+</style>
+</head>
+<body>
+
+
+<script>
+       for (var i = 1; i <= 15; i++) {
+           var myDiv = document.createElement('div');
+           document.body.appendChild(myDiv);
+       }
+       var divs = document.querySelectorAll('div');
+
+      document.body.addEventListener('click', mouseClick);
+
+      function mouseClick(event){
+            var obj = event.target;
+            if(obj.tagName == 'DIV'){
+                var _color = Math.random().toString(16);
+                _color = '#' + _color.substr(2,6);
+                event.target.style.backgroundColor =_color;
+            }
+      }
+
+       </script>
+
+</body>
+</html>
