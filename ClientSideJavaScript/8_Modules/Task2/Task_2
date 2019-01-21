@@ -1,1 +1,6 @@
 
+1)
+import {getFirstWeekday}  from './solution.js';
+
+2)
+import { length } from './strings';
