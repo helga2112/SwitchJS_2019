@@ -18,6 +18,7 @@ import { ... } from './solution.js';
 Модуль strings содержит (и экспортирует) функцию length,
 которая возвращает длину переданной строки.
 Каким должен быть импорт для того чтобы сработал этот код?
+
 const endWith = (str, char) => str[length(str) - 1] === char;
 
 endWith('hello', 'o'); // true
