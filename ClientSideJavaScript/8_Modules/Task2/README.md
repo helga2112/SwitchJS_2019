@@ -1,8 +1,11 @@
 "В модуле solution.js есть несколько экспортированных функций:
 
-export const getFirstWeekday = () => 'Monday';
-export const getSecondWeekday = () => 'Tuesday';
+export const getFirstWeekday = () => 'Monday'; 
+
+export const getSecondWeekday = () => 'Tuesday'; 
+
 const getFifthWeekday = () => 'Friday';
+
 export default getFifthWeekday;
 
 Как правильно импортировать функцию getFirstWeekday
