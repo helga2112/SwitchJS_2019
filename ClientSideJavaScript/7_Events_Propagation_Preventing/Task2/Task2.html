@@ -3,5 +3,29 @@
   </head>
   
   <body>
+    <input type="text" id="phone" placeholder="add some text"/>
+    <script>
+      var _phone = document.getElementById("phone");
+      _phone.addEventListener('input', handler);
+
+
+      function handler(event){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        
+        var _inputData = _phone.value;
+
+        try{
+          var regExp = /\d/g;
+         _inputData = _inputData.match(regExp).join("");
+         _phone.value = _inputData;
+        }catch(e){
+            _phone.value = "";
+        }
+       
+
+      }
+    </script>
+
   </body>
 </html>
