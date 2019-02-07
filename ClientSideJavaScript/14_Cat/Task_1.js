@@ -41,8 +41,7 @@ class Cat{
 
 	//happiness
     pet(n){	
-		var isOk = (Math.random() * 100 > 50) ? true:false; 
-		if(isOk){
+		if((Math.random() * 100 > 50)){
 		 this.change('happiness', n); 
         }
        
